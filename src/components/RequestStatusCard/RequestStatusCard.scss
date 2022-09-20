@@ -1,0 +1,12 @@
+.status-card {
+	border-radius: 10px;
+	padding: 1rem 2rem;
+
+	&--error {
+		border: 2px solid $color-action;
+	}
+
+	&--success {
+		border: 2px solid $color-primary-dark;
+	}
+}

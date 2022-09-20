@@ -1,0 +1,18 @@
+.cls-1,
+.cls-2 {
+	fill: none;
+	stroke: $color-action;
+	stroke-width: 15px;
+}
+
+.cls-1 {
+	stroke-linejoin: round;
+}
+
+.cls-2 {
+	stroke-miterlimit: 10;
+}
+
+.code-icon {
+	fill: $color-action;
+}

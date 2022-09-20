@@ -1,0 +1,49 @@
+.card {
+	border-radius: 20px;
+	width: 100%;
+	overflow: hidden;
+	background-color: #ffff;
+	box-shadow: 0 0 20px 8px #d0d0d0;
+	border-top: 3px solid $color-primary-dark;
+	padding: 2rem;
+
+	& a {
+		text-decoration: none;
+		color: $color-secondary;
+	}
+
+	&-header {
+		color: $color-primary-dark;
+	}
+
+	&-data {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-top: 1rem;
+
+		&-elements {
+			border: 2px solid yellow;
+			border-radius: 10px;
+			padding: 1rem;
+		}
+
+		&-errors {
+			border: 2px solid $color-action;
+			border-radius: 10px;
+			padding: 1rem;
+		}
+	}
+
+	&-description {
+		margin-top: 2rem;
+	}
+}
+
+.more-info {
+	margin-top: 2rem;
+}
+
+.link-list {
+	list-style: none;
+}
