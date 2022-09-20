@@ -5,11 +5,6 @@ export const urlEvaluationRequest = async (url) => {
 		'https://web-access-server.onrender.com/api/evaluate/url',
 		{
 			url,
-		},
-		{
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-			},
 		}
 	);
 
@@ -21,11 +16,6 @@ export const codeEvaluationRequest = async (code) => {
 		'https://web-access-server.onrender.com/api/evaluate/code',
 		{
 			code,
-		},
-		{
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-			},
 		}
 	);
 
