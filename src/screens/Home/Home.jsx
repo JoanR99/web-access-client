@@ -32,7 +32,7 @@ const Home = () => (
 			</div>
 			<div className="section__content">
 				<h1 className="heading-1 heading-1--secondary">
-					Choose the right contrast for your colors
+					Choose the right colors for your website
 				</h1>
 				<p>
 					Check the contrast between the colors used for the text and the
