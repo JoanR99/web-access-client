@@ -6,7 +6,6 @@ const ExamplePanel = ({ textColor, backgroundColor }) => (
 		className="example-panel"
 		style={{ backgroundColor, color: textColor }}
 	>
-		{console.log('example')}
 		<h1>Contrast Evaluator</h1>
 		<p>
 			Change the text and background colors with the inputs below to see if the

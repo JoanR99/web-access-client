@@ -11,8 +11,6 @@ const useContrast = (textColor, backgroundColor) => {
 	const [levelStatus, setLevelStatus] = useState('');
 
 	useEffect(() => {
-		console.log('effect');
-		console.log(textColor);
 		const evaluate = () => {
 			const ratio = checkContrast(textColor, backgroundColor);
 			const { didPass, maxLevel } = meetsMinimumRequirements(ratio);

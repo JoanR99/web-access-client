@@ -10,7 +10,6 @@ const StatusPanel = ({ textColor, backgroundColor }) => {
 
 	return (
 		<section className="status-panel">
-			{console.log('status')}
 			<p>
 				Cotrast ratio:{' '}
 				<span style={{ color: `${pass ? 'green' : 'red'}` }}>

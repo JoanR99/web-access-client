@@ -7,7 +7,6 @@ const ContrastEvaluation = () => {
 	const [backgroundColor, setBackgroundColor] = useState('#1A8FE3');
 	return (
 		<div className="contrast-page">
-			{console.log('contrast')}
 			<ExamplePanel textColor={textColor} backgroundColor={backgroundColor} />
 			<StatusPanel textColor={textColor} backgroundColor={backgroundColor} />
 			<ColorInputs

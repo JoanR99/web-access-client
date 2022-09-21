@@ -9,7 +9,6 @@ const ColorInputs = ({
 	setBackgroundColor,
 }) => (
 	<section className="color-inputs">
-		{console.log('color')}
 		<ColorPicker
 			color={textColor}
 			setColor={setTextColor}

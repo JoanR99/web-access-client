@@ -6,8 +6,6 @@ const useEvaluationFlow = (isSuccess, isError) => {
 	const navigate = useNavigate();
 	const { resetError } = useEvaluationApi();
 
-	console.log('effect');
-
 	useEffect(() => {
 		if (isSuccess) {
 			navigate('/evaluation/results');
