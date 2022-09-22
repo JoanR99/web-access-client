@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { codeEvaluationRequest } from '../../services/evaluationRequest';
 import Spinner from '../Spinner/Spinner';
 import { useSetResults } from '../../context/ResultsProvider';
+import ErrorCard from '../ErrorCard/ErrorCard';
 
 const CodeForm = () => {
 	const [code, setCode] = useState('');
@@ -45,7 +46,9 @@ const CodeForm = () => {
 							value={code}
 							onChange={(e) => setCode(e.target.value)}
 							placeholder="<html> </html>"
+							required
 						></textarea>
+						{error && <ErrorCard>{error}</ErrorCard>}
 					</div>
 				)}
 

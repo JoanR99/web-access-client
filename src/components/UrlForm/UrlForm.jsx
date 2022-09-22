@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { urlEvaluationRequest } from '../../services/evaluationRequest';
 import Spinner from '../Spinner/Spinner';
 import { useSetResults } from '../../context/ResultsProvider';
+import ErrorCard from '../ErrorCard/ErrorCard';
 
 const UrlForm = () => {
 	const [url, setUrl] = useState('');
@@ -44,8 +45,10 @@ const UrlForm = () => {
 							id="url"
 							value={url}
 							onChange={(e) => setUrl(e.target.value)}
-							placeholder="www.example.com"
+							placeholder="https://www.example.com"
+							required
 						/>
+						{error && <ErrorCard>{error}</ErrorCard>}
 					</div>
 				)}
 
