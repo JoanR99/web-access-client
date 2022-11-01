@@ -18,7 +18,6 @@ import ResultsCard from './ResultsCard/ResultsCard';
 import ResultsCardList from './ResultsCardList/ResultsCardList';
 import Spinner from './Spinner/Spinner';
 import StatusPanel from './StatusPanel/StatusPanel';
-import UrlEvaluationIllustration from './UrlEvaluationIllustration/UrlEvaluationIllustration';
 import UrlForm from './UrlForm/UrlForm';
 
 export {
@@ -42,6 +41,5 @@ export {
 	ResultsCardList,
 	Spinner,
 	StatusPanel,
-	UrlEvaluationIllustration,
 	UrlForm,
 };
