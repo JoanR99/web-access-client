@@ -121,12 +121,45 @@ a {
 	}
 }
 
-.form-layout {
+.evaluation-section {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 4rem;
+	height: calc(100vh - 15rem);
+}
+
+.panel {
+	width: 100%;
+}
+
+.tabs {
+	background-color: $color-primary-dark;
+	width: 50%;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
+	border-radius: 10px;
+	padding: 5px;
+	justify-content: space-around;
 	row-gap: 2rem;
+}
+
+.tab {
+	color: white;
+	background-color: $color-primary-dark;
+	border-radius: 10px;
+	padding: 1rem;
+	width: 48%;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+
+	&--active {
+		background-color: white;
+		color: $color-primary-dark;
+	}
+}
+
+.inputs-section {
+	margin-top: 20vh;
 }
 
 .form {
@@ -206,4 +239,8 @@ a {
 	&:visited {
 		color: $color-action;
 	}
+}
+
+.mb-2 {
+	margin-bottom: 2rem;
 }

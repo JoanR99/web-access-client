@@ -5,35 +5,28 @@ import Spinner from '../Spinner/Spinner';
 import { useSetResults } from '../../context/ResultsProvider';
 import ErrorCard from '../ErrorCard/ErrorCard';
 
-const UrlForm = () => {
+const UrlForm = ({ isLoading, error, dispatch }) => {
 	const [url, setUrl] = useState('');
-	const [isLoading, setIsLoading] = useState(false);
-	const [error, setError] = useState(null);
-	const navigate = useNavigate();
-	const setResults = useSetResults();
 
 	const submitHandler = async (e) => {
 		e.preventDefault();
 
 		try {
-			setIsLoading(true);
+			dispatch({ type: 'EVALUATION_START' });
 
 			const results = await urlEvaluationRequest(url);
 
-			setResults(results);
+			dispatch({ type: 'EVALUATION_SUCCESS', payload: results });
 
 			navigate('/evaluation/results');
 		} catch (e) {
-			setError(e.response.data.message);
-		} finally {
-			setIsLoading(false);
+			dispatch({ type: 'EVALUATION_FAIL', payload: e.response.data.message });
 		}
 	};
 
 	return (
 		<>
 			<form onSubmit={submitHandler} className="form">
-				<h2 className="heading-2 heading-2--primary">Evaluate By URL</h2>
 				{isLoading ? (
 					<Spinner />
 				) : (
@@ -52,7 +45,7 @@ const UrlForm = () => {
 					</div>
 				)}
 
-				<button type="submit" className="btn">
+				<button type="submit" className="btn" disabled={isLoading}>
 					Evaluate
 				</button>
 			</form>
