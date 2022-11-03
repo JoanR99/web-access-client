@@ -21,6 +21,11 @@ export default defineConfig({
 			},
 		},
 	},
+	test: {
+		globals: true,
+		environment: 'jsdom',
+		setupFiles: 'src/tests/setupTests.js',
+	},
 	plugins: [
 		react({ babel: { plugins: [jotaiDebugLabel, jotaiReactRefresh] } }),
 	],

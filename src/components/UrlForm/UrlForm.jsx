@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { urlEvaluationRequest } from '../../services/evaluationRequest';
 import Spinner from '../Spinner/Spinner';
-import { useSetResults } from '../../context/ResultsProvider';
 import ErrorCard from '../ErrorCard/ErrorCard';
 
 const UrlForm = ({ isLoading, error, dispatch }) => {
