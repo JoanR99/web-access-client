@@ -4,8 +4,8 @@ import './ResultsCard.scss';
 const ResultsCard = ({
 	name,
 	description,
-	elementCount,
-	errorCount,
+	element_count,
+	error_count,
 	successCriterion,
 }) => {
 	return (
@@ -16,11 +16,11 @@ const ResultsCard = ({
 			<div className="card-body">
 				<div className="card-data">
 					<span className="card-data-elements">
-						{elementCount}{' '}
-						{`${elementCount > 1 ? 'elements' : 'element'} evaluated`}
+						{element_count}{' '}
+						{`${element_count > 1 ? 'elements' : 'element'} evaluated`}
 					</span>
 					<span className="card-data-errors">
-						{errorCount} {`${errorCount > 1 ? 'errors' : 'error'} found`}
+						{error_count} {`${error_count > 1 ? 'errors' : 'error'} found`}
 					</span>
 				</div>
 				<div className="card-description">
