@@ -10,8 +10,8 @@ const StatusPanel = () => {
 
 	return (
 		<section className="status-panel">
-			<p>
-				Cotrast ratio:{' '}
+			<p className="paragraph">
+				Contrast ratio:{' '}
 				<span style={{ color: `${didPass ? 'green' : 'red'}` }}>
 					{ratioStatus} {levelStatus}
 				</span>

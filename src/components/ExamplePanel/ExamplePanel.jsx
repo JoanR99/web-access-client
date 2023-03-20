@@ -13,7 +13,7 @@ const ExamplePanel = () => {
 			style={{ backgroundColor, color: textColor }}
 		>
 			<h1>Contrast Evaluator</h1>
-			<p>
+			<p className="paragraph">
 				Change the text and background colors with the inputs below to see if
 				the contrast ratio meets the levels proposed by the WCAG. In this panel
 				you can see the graphic example of the defined contrast.

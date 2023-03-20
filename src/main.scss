@@ -24,6 +24,14 @@ $font-heading: 'Poppins', sans-serif;
 $font-paragraph: 'Raleway', sans-serif;
 
 ////////////////////////////////
+/// BREAK POINTS
+
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1200px;
+
+////////////////////////////////
 ///// SETUP
 
 *,
@@ -64,7 +72,8 @@ body {
 
 .heading-1 {
 	font-family: $font-heading;
-	font-size: 3rem;
+
+	font-size: 2rem;
 	line-height: 1;
 	text-transform: uppercase;
 	margin-bottom: 2rem;
@@ -75,6 +84,10 @@ body {
 
 	&--secondary {
 		color: $color-secondary;
+	}
+
+	@media screen and (min-width: $tablet) {
+		font-size: 2.8rem;
 	}
 }
 
@@ -104,28 +117,53 @@ a {
 	}
 }
 
+.paragraph {
+	font-size: 1.4rem;
+	@media screen and (min-width: $tablet) {
+		font-size: 1.6rem;
+	}
+}
+
 .section {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	column-gap: 4rem;
-	align-items: center;
-	height: calc(100vh - 15rem);
+	display: flex;
+	flex-direction: column;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+
+	&__content {
+		height: fit-content;
+		order: 2;
+		margin-top: 2rem;
+		@media screen and (min-width: $desktop) {
+			width: 50%;
+			order: unset;
+		}
+	}
 
 	&__illustration {
-		display: flex;
-		align-items: center;
+		order: 1;
+
+		@media screen and (min-width: $desktop) {
+			width: 50%;
+			order: unset;
+		}
 	}
 
 	&:not(:last-child) {
 		margin-bottom: 4rem;
 	}
+
+	@media screen and (min-width: $desktop) {
+		flex-direction: row;
+		column-gap: 4rem;
+		align-items: center;
+		height: calc(100vh - 15rem);
+	}
 }
 
-.evaluation-section {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	column-gap: 4rem;
-	height: calc(100vh - 15rem);
+.illustration {
+	width: 100%;
+	height: auto;
 }
 
 .panel {
@@ -158,12 +196,7 @@ a {
 	}
 }
 
-.inputs-section {
-	margin-top: 20vh;
-}
-
 .form {
-	width: 60%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;

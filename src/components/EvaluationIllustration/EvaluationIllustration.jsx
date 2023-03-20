@@ -6,6 +6,7 @@ const EvaluationIllustration = () => (
 		data-name="Layer 1"
 		viewBox="0 0 709.53268 558.59384"
 		xmlnsXlink="http://www.w3.org/1999/xlink"
+		className="illustration"
 	>
 		<rect
 			x="0.27492"

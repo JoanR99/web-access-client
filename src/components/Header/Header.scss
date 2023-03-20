@@ -35,9 +35,19 @@
 		&:hover {
 			color: $color-action;
 		}
+
+		@media screen and (max-width: $mobile) {
+			font-size: 1.4rem;
+		}
 	}
 }
 
 .active {
 	color: $color-action;
+}
+
+.main-logo {
+	@media screen and (max-width: $mobile) {
+		font-size: 2rem;
+	}
 }

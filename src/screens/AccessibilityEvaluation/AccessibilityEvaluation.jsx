@@ -10,11 +10,11 @@ const AccessibilityEvaluation = () => {
 	const reset = () => dispatch({ type: 'RESET' });
 
 	return !results ? (
-		<div className="evaluation-section">
+		<div className="section">
 			<div className="section__illustration">
 				<CodeEvaluationIllustration />
 			</div>
-			<div className="inputs-section">
+			<div className="section__content">
 				<h2 className="heading-2 heading-2--primary mb-2">
 					Evaluate Accessibility
 				</h2>

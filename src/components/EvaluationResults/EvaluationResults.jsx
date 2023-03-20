@@ -1,5 +1,6 @@
 import React from 'react';
 import { ResultsCardList } from '..';
+import './EvaluationResults.scss';
 
 const EvaluationResults = ({ results, reset }) => {
 	return (

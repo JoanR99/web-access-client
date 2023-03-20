@@ -15,4 +15,9 @@
 		box-shadow: 0 10px 20px 0.5px rgba($color-black, 0.5);
 		transform: translateY(-3px);
 	}
+
+	@media screen and (max-width: $mobile) {
+		font-size: 1.4rem;
+		padding: 0.6rem 2rem;
+	}
 }
