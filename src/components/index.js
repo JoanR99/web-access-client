@@ -1,4 +1,4 @@
-import Button from './Button/Button';
+import { Button, ButtonLink } from './Button/Button';
 import CardIcon from './CardIcon/CardIcon';
 import CodeEvaluationIllustration from './CodeEvaluationIllustration/CodeEvaluationIllustration';
 import CodeForm from './CodeForm/CodeForm';
@@ -22,6 +22,7 @@ import UrlForm from './UrlForm/UrlForm';
 
 export {
 	Button,
+	ButtonLink,
 	CardIcon,
 	CodeEvaluationIllustration,
 	CodeForm,

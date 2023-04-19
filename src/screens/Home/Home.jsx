@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-	Button,
+	ButtonLink,
 	HeroIllustration,
 	ContrastIllustration,
 } from '../../components';
@@ -17,7 +17,7 @@ const Home = () => (
 					code following the latest standard of the guidelines established by
 					the WCAG.
 				</p>
-				<Button to="/evaluation">Evaluate</Button>
+				<ButtonLink to="/evaluation">Evaluate</ButtonLink>
 			</div>
 
 			<div className="section__illustration">
@@ -38,7 +38,7 @@ const Home = () => (
 					background on your websites, ensuring that people with visual
 					disabilities can use them.
 				</p>
-				<Button to="/contrast">Check Contrast</Button>
+				<ButtonLink to="/contrast">Check Contrast</ButtonLink>
 			</div>
 		</section>
 	</>

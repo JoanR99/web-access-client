@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResultsCardList } from '..';
+import { Button, ResultsCardList } from '..';
 import './EvaluationResults.scss';
 
 const EvaluationResults = ({ results, reset }) => {
@@ -11,9 +11,9 @@ const EvaluationResults = ({ results, reset }) => {
 			<h3>Errors found: {results?.errors_found_count}</h3>
 			<ResultsCardList results={results?.results_details} />
 
-			<button onClick={reset} className="btn">
+			<Button onClick={reset} className="btn">
 				Go Back
-			</button>
+			</Button>
 		</div>
 	);
 };

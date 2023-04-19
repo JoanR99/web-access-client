@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { codeEvaluationRequest } from '../../services/evaluationRequest';
 import Spinner from '../Spinner/Spinner';
 import ErrorCard from '../ErrorCard/ErrorCard';
+import { Button } from '../';
 
 const CodeForm = ({ isLoading, error, dispatch }) => {
 	const [code, setCode] = useState('');
@@ -41,9 +42,9 @@ const CodeForm = ({ isLoading, error, dispatch }) => {
 					</div>
 				)}
 
-				<button type="submit" className="btn" disabled={isLoading}>
+				<Button type="submit" className="btn" disabled={isLoading}>
 					Evaluate
-				</button>
+				</Button>
 			</form>
 		</>
 	);
