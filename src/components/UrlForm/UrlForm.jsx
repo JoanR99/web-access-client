@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { urlEvaluationRequest } from '../../services/evaluationRequest';
 import Spinner from '../Spinner/Spinner';
 import ErrorCard from '../ErrorCard/ErrorCard';
-import Button from '..';
+import { Button } from '..';
 
 const UrlForm = ({ isLoading, error, dispatch }) => {
 	const [url, setUrl] = useState('');

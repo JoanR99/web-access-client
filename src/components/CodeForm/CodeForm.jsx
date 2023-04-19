@@ -23,7 +23,7 @@ const CodeForm = ({ isLoading, error, dispatch }) => {
 
 	return (
 		<>
-			<form onSubmit={submitHandler} className="form">
+			<form onSubmit={submitHandler} className="form" aria-label="form">
 				{isLoading ? (
 					<Spinner />
 				) : (
