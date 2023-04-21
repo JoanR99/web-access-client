@@ -1,8 +1,18 @@
 import React from 'react';
-import { Button, ResultsCardList } from '..';
+import { Button, ResultsCardList } from '../../components';
 import './EvaluationResults.scss';
+import { useEvaluation, useDispatch } from '../../context/EvaluationContext';
+import { useNavigate } from 'react-router-dom';
 
-const EvaluationResults = ({ results, reset }) => {
+const EvaluationResults = () => {
+	const { results } = useEvaluation();
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const reset = () => {
+		dispatch({ type: 'RESET' });
+		navigate('/evaluation');
+	};
+
 	return (
 		<div className="results-page">
 			<h1 className="text-center mb-4">Results</h1>

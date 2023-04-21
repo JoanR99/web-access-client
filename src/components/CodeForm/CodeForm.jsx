@@ -3,9 +3,14 @@ import { codeEvaluationRequest } from '../../services/evaluationRequest';
 import Spinner from '../Spinner/Spinner';
 import ErrorCard from '../ErrorCard/ErrorCard';
 import { Button } from '../';
+import { useDispatch, useEvaluation } from '../../context/EvaluationContext';
+import { useNavigate } from 'react-router-dom';
 
-const CodeForm = ({ isLoading, error, dispatch }) => {
+const CodeForm = () => {
+	const { isLoading, error } = useEvaluation();
+	const dispatch = useDispatch();
 	const [code, setCode] = useState('');
+	const navigate = useNavigate();
 
 	const submitHandler = async (e) => {
 		e.preventDefault();
@@ -16,6 +21,8 @@ const CodeForm = ({ isLoading, error, dispatch }) => {
 			const results = await codeEvaluationRequest(code);
 
 			dispatch({ type: 'EVALUATION_SUCCESS', payload: results });
+
+			navigate('/evaluation/results');
 		} catch (e) {
 			dispatch({ type: 'EVALUATION_FAIL', payload: e.response.data.message });
 		}

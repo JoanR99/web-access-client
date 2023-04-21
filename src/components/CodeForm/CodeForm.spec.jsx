@@ -1,10 +1,30 @@
 import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import CodeForm from './CodeForm';
+import {
+	DispatchContext,
+	EvaluationContext,
+} from '../../context/EvaluationContext';
+import { MemoryRouter } from 'react-router-dom';
+
+const customRender = (child, { dispatch, state, ...renderOptions }) => {
+	return render(
+		<EvaluationContext.Provider value={state}>
+			<DispatchContext.Provider value={dispatch}>
+				{child}
+			</DispatchContext.Provider>
+		</EvaluationContext.Provider>,
+		renderOptions
+	);
+};
 
 describe('Code form', () => {
 	it('should render form', () => {
-		render(<CodeForm isLoading={false} error={null} dispatch={() => {}} />);
+		customRender(<CodeForm />, {
+			dispatch: () => {},
+			state: { isLoading: false, error: null, results: null },
+			wrapper: MemoryRouter,
+		});
 
 		const form = screen.getByRole('form');
 
@@ -23,7 +43,11 @@ describe('Code form', () => {
 	});
 
 	it('should disable button when isLoading is true', () => {
-		render(<CodeForm isLoading={true} error={null} dispatch={() => {}} />);
+		customRender(<CodeForm />, {
+			dispatch: () => {},
+			state: { isLoading: true, error: null, results: null },
+			wrapper: MemoryRouter,
+		});
 
 		const button = screen.getByRole('button', { name: /evaluate/i });
 
@@ -32,7 +56,11 @@ describe('Code form', () => {
 	});
 
 	it('should display error', () => {
-		render(<CodeForm isLoading={false} error="error" dispatch={() => {}} />);
+		customRender(<CodeForm />, {
+			dispatch: () => {},
+			state: { isLoading: false, error: 'error', results: null },
+			wrapper: MemoryRouter,
+		});
 
 		const errorMessage = screen.getByText('error');
 
@@ -41,7 +69,11 @@ describe('Code form', () => {
 
 	it('should call dispatch on submit', () => {
 		const dispatch = vi.fn();
-		render(<CodeForm isLoading={false} error={null} dispatch={dispatch} />);
+		customRender(<CodeForm />, {
+			dispatch,
+			state: { isLoading: false, error: null, results: null },
+			wrapper: MemoryRouter,
+		});
 
 		const textarea = screen.getByRole('textbox', { name: /code/i });
 
@@ -56,7 +88,11 @@ describe('Code form', () => {
 
 	it('should not call dispatch on submit when input is empty', () => {
 		const dispatch = vi.fn();
-		render(<CodeForm isLoading={false} error={null} dispatch={dispatch} />);
+		customRender(<CodeForm />, {
+			dispatch,
+			state: { isLoading: false, error: null, results: null },
+			wrapper: MemoryRouter,
+		});
 
 		const button = screen.getByRole('button', { name: /evaluate/i });
 

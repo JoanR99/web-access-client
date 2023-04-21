@@ -3,9 +3,14 @@ import { urlEvaluationRequest } from '../../services/evaluationRequest';
 import Spinner from '../Spinner/Spinner';
 import ErrorCard from '../ErrorCard/ErrorCard';
 import { Button } from '..';
+import { useNavigate } from 'react-router-dom';
+import { useEvaluation, useDispatch } from '../../context/EvaluationContext';
 
-const UrlForm = ({ isLoading, error, dispatch }) => {
+const UrlForm = () => {
 	const [url, setUrl] = useState('');
+	const { isLoading, error } = useEvaluation();
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const submitHandler = async (e) => {
 		e.preventDefault();

@@ -3,7 +3,7 @@ import { Tab } from '@headlessui/react';
 import CodeForm from '../CodeForm/CodeForm';
 import UrlForm from '../UrlForm/UrlForm';
 
-const EvaluationTabs = ({ isLoading, dispatch, error }) => (
+const EvaluationTabs = () => (
 	<Tab.Group>
 		<Tab.List className="tabs">
 			<Tab as={Fragment}>
@@ -19,10 +19,10 @@ const EvaluationTabs = ({ isLoading, dispatch, error }) => (
 		</Tab.List>
 		<Tab.Panels className="panel">
 			<Tab.Panel>
-				<UrlForm isLoading={isLoading} dispatch={dispatch} error={error} />
+				<UrlForm />
 			</Tab.Panel>
 			<Tab.Panel>
-				<CodeForm isLoading={isLoading} dispatch={dispatch} error={error} />
+				<CodeForm />
 			</Tab.Panel>
 		</Tab.Panels>
 	</Tab.Group>
