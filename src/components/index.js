@@ -11,8 +11,6 @@ import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import HeroIllustration from './HeroIllustration/HeroIllustration';
 import NetIcon from './NetIcon/NetIcon';
-import RequestStatus from './RequestStatus/RequestStatus';
-import RequestStatusCard from './RequestStatusCard/RequestStatusCard';
 import ResultsCard from './ResultsCard/ResultsCard';
 import ResultsCardList from './ResultsCardList/ResultsCardList';
 import Spinner from './Spinner/Spinner';
@@ -34,8 +32,6 @@ export {
 	Header,
 	HeroIllustration,
 	NetIcon,
-	RequestStatus,
-	RequestStatusCard,
 	ResultsCard,
 	ResultsCardList,
 	Spinner,
