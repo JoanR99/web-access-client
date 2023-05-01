@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ExamplePanel from './ExamplePanel';
 import { useHydrateAtoms } from 'jotai/utils';
 import { Provider } from 'jotai';
@@ -15,15 +15,6 @@ const TestProvider = ({ initialValues, children }) => (
 		<HydrateAtoms initialValues={initialValues}>{children}</HydrateAtoms>
 	</Provider>
 );
-
-const hexToRgb = (color) => {
-	color = color.slice(1);
-
-	const r = parseInt(color.slice(0, 2), 16);
-	const g = parseInt(color.slice(2, 4), 16);
-	const b = parseInt(color.slice(4, 6), 16);
-	return `rgb(${r}, ${g}, ${b})`;
-};
 
 describe('Example Panel component', () => {
 	beforeEach(() => {
