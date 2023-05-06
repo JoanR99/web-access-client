@@ -61,7 +61,7 @@ This repository contains the frontend of WebAccess, developed with Javascript, R
 4. Start server
 
    ```sh
-   npm run start
+   npm run dev
    ```
 
 5. You need to setup the backend to use the accessibility evaluation tool. Follow the instructions on the [Backend Repo](https://github.com/JoanR99/web-access-server-fastapi 'WebAccess Backend repo')
