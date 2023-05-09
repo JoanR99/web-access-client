@@ -1,4 +1,4 @@
-describe('url evaluation', () => {
+describe('code evaluation', () => {
 	it('should show evaluation results', () => {
 		cy.visit('/');
 
@@ -11,10 +11,8 @@ describe('url evaluation', () => {
 		);
 
 		cy.log('Prepare evaluation');
-		cy.findByPlaceholderText('https://www.example.com')
-			.should('be.visible')
-			.click()
-			.type('https://www.google.com');
+		cy.findAllByRole('tab', { name: 'Code' }).should('be.visible').click();
+		cy.findByRole('textbox').should('be.visible').click().type('<html></html>');
 		cy.findByRole('button', { name: /evaluate/i })
 			.should('be.visible')
 			.click();
@@ -28,7 +26,7 @@ describe('url evaluation', () => {
 		cy.findAllByRole('article').should('be.visible');
 	});
 
-	it('should show error when url is empty', () => {
+	it('should show error when textarea is empty', () => {
 		cy.visit('/');
 
 		cy.log('Opening the evaluation page');
@@ -39,40 +37,15 @@ describe('url evaluation', () => {
 			'be.visible'
 		);
 
+		cy.findAllByRole('tab', { name: 'Code' }).should('be.visible').click();
 		cy.findByRole('button', { name: /evaluate/i })
 			.should('be.visible')
 			.click();
-		cy.findByPlaceholderText('https://www.example.com')
+		cy.findByRole('textbox')
 			.should('be.visible')
 			.invoke('prop', 'validationMessage')
 			.should((text) => {
 				expect(text).to.contain('Please fill');
-			});
-	});
-
-	it('should show error when url is invalid', () => {
-		cy.visit('/');
-
-		cy.log('Opening the evaluation page');
-		cy.findByRole('link', { name: /evaluation/i }).click();
-
-		cy.log('Evaluation page');
-		cy.findByRole('heading', { name: /Evaluate Accessibility/i }).should(
-			'be.visible'
-		);
-
-		cy.findByPlaceholderText('https://www.example.com')
-			.should('be.visible')
-			.click()
-			.type('w.google');
-
-		cy.findByRole('button', { name: /evaluate/i })
-			.should('be.visible')
-			.click();
-		cy.findByPlaceholderText('https://www.example.com')
-			.invoke('prop', 'validationMessage')
-			.should((text) => {
-				expect(text).to.contain('Please enter a URL.');
 			});
 	});
 });
