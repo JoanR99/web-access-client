@@ -11,7 +11,7 @@ const ExamplePanel = () => {
 		<section
 			className="example-panel"
 			style={{ backgroundColor, color: textColor }}
-			role="contentinfo"
+			role="region"
 		>
 			<h1>Contrast Evaluator</h1>
 			<p className="paragraph">
